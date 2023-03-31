@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/models/game';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 
@@ -13,15 +14,18 @@ import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player
 export class GameComponent implements OnInit {
   pickCardAnimation = false;
   currentCard: string = '';
-  game: Game = new Game;
+  game: Game = new Game();
 
 
-  constructor(public dialog: MatDialog) {
-
+  constructor(glob firestore: AngularFirestore, public dialog: MatDialog) {
+  
   }
 
   ngOnInit(): void {
     this.newGame();
+    this.firestore.collection('games').valueChanges().subscribe((game:any) =>{
+      console.log('Game update', game)
+    });
   }
 
   newGame() {
