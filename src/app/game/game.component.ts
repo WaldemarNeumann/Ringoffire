@@ -17,7 +17,7 @@ export class GameComponent implements OnInit {
   game: Game = new Game();
 
 
-  constructor(glob firestore: AngularFirestore, public dialog: MatDialog) {
+  constructor(private firestore: AngularFirestore, public dialog: MatDialog) {
   
   }
 
