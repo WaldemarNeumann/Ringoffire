@@ -7,8 +7,14 @@ import { StartScreenComponent } from './start-screen/start-screen.component';
 import { GameComponent } from './game/game.component';
 import { PlayerComponent } from './player/player.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  MatButtonModule } from '@angular/material/button';
-import {  MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+// import { GameScreenComponent } from './game-screen/game-screen.component';
+// import { PlayerDisplayComponent } from './player display/player display.component';
+// import { InstructionsComponent } from './instructions/instructions.component';
+// import { AddPlayerDialogComponent } from './add-player-dialog/add-player-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { DialogAddPlayerComponent } from './dialog-add-player/dialog-add-player.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
@@ -20,6 +26,12 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { HomeComponent } from './components/home/home.component';
+import { BookComponent } from './components/book/book.component';
+import { BooksComponent } from './components/books/books.component';
+import { SearchComponent } from './components/search/search.component';
+import { EditBookComponent } from './modal/edit-book/edit-book.component';
+
 
 
 
@@ -31,7 +43,12 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     GameComponent,
     PlayerComponent,
     DialogAddPlayerComponent,
-    GameInfoComponent
+    GameInfoComponent,
+    HomeComponent,
+    BookComponent,
+    BooksComponent,
+    SearchComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +59,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     FormsModule,
     MatIconModule,
     MatDialogModule,
+    MatSelectModule,
+    MatFormFieldModule,
     BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
@@ -52,3 +71,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export interface IBook {
+  id?: string;
+  name : string;
+  author : string;
+  genre : string;
+  price : number;
+}
