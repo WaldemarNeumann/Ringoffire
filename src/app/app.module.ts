@@ -31,6 +31,9 @@ import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
 import { SearchComponent } from './components/search/search.component';
 import { EditBookComponent } from './modal/edit-book/edit-book.component';
+import { AngularFireModule } from '@angular/fire/compat';
+
+
 
 
 
@@ -65,7 +68,8 @@ import { EditBookComponent } from './modal/edit-book/edit-book.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
