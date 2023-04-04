@@ -2,30 +2,25 @@
     width: 100vw;
     height: 100vh;
     max-width: 100%;
-    background-color: gray;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: cover;
     img {
         width: 100vw;
         height: 100vh;
         max-width: 100%;
-        background-size: cover;
-        background-position: bottom;
     }
 }
 
 .start-label-box {
-    position: absolute;
-    top: 20px;
-    left: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    top: 65%;
+    left: 39%;
     img {
-        width: 200px;
-        height: 150px;
+        width: 20vw;
+        height: 24vh;
         &:hover {
             cursor: pointer;
             filter: brightness(1.3);

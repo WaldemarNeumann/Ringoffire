@@ -3,7 +3,7 @@
     align-items: center;
     font-size: 30px;
     width: 300px;
-    background-color: rgb(119, 175, 155);
+    background-color: rgba(119, 175, 155, 0.8);
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
     span {
@@ -19,5 +19,5 @@
 }
 
 .player-active {
-    background-color: aquamarine !important;
+    background-color: rgba(133, 240, 202, 0.8)!important;
 }
