@@ -55,6 +55,7 @@
 .player-position {
     position: absolute;
     right: 0;
+    top: 10px;
     z-index: 1;
 }
 
@@ -69,4 +70,21 @@
     bottom: 32px;
     left: 100px;
     right: 100px;
+}
+
+.gameOver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 700px;
+        height: 700px;
+    }
+}
+
+.preloadImage {
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+    z-index: -10;
 }

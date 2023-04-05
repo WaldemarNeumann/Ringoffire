@@ -32,6 +32,7 @@ import { BooksComponent } from './components/books/books.component';
 import { SearchComponent } from './components/search/search.component';
 import { EditBookComponent } from './modal/edit-book/edit-book.component';
 import { AngularFireModule } from '@angular/fire/compat';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
 
 
 
@@ -51,7 +52,8 @@ import { AngularFireModule } from '@angular/fire/compat';
     BookComponent,
     BooksComponent,
     SearchComponent,
-    EditBookComponent
+    EditBookComponent,
+    EditPlayerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,24 +1,34 @@
 export class Game {
   public players: string[] = [];
+  public player_image: string[] = [];
   public stack: string[] = [];
   public playedCards: string[] = [];
   public currentPlayer: number = 0;
   public pickCardAnimation = false;
   public currentCard: string = '';
+  // public isGameFinished = false; 
 
   constructor() {
-    for (let i = 1; i < 14; i++) {
+    for (let i = 1; i < 2; i++) {
       this.stack.push('ace_' + i);
       this.stack.push('clubs_' + i); 
       this.stack.push('diamonds_' + i);  
       this.stack.push('hearts_' + i);  
     }
     shuffle(this.stack);
+
+  }
+
+
+
+  public getRemainingCardsCount(): number {
+    return this.stack.length;
   }
 
   public toJson() {
       return {
         players: this.players,
+        player_image: this.player_image,
         stack: this.stack,
         playedCards: this.playedCards,
         currentPlayer: this.currentPlayer,
@@ -40,7 +50,7 @@ function shuffle(array: string[]) {
   
       // And swap it with the current element.
       [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+      array[randomIndex], array[currentIndex]];
     }
   
     return array;

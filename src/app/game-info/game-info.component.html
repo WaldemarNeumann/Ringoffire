@@ -1,4 +1,18 @@
 <mat-card>
-    <mat-card-title>{{ card ? title : 'Bitte ziehe eine Karte'}}</mat-card-title>
-    <mat-card-content>{{ card ? description : 'Klicke auf den Kartenstapel um die nächste Karte zu erhalten'}}</mat-card-content>
+
+    <ng-container *ngIf="this.isGameNew">
+        <mat-card-title>Waiting for more players...</mat-card-title>
+        <mat-card-content>Add two players to start the game</mat-card-content>
+    </ng-container>
+
+    <ng-container *ngIf="!this.isGameStarted">
+        <mat-card-title>{{ card ? title : 'Draw a Card!'}}</mat-card-title>
+        <mat-card-content>{{ card ? description : 'Click the stack to draw a card and start the game!'}}</mat-card-content>
+    </ng-container>
+
+    <ng-container *ngIf="this.isGameFinished">
+        <mat-card-title>{{ card ? title : 'Game Over!'}}</mat-card-title>
+        <mat-card-content>{{ card ? description : 'Click the button new Game'}}</mat-card-content>
+    </ng-container>
+
 </mat-card>
