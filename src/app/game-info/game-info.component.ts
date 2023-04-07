@@ -31,14 +31,10 @@ export class GameInfoComponent implements OnInit, OnChanges{
    isGameStarted = false;
    isGameNew = false;
 
-  ngOnInit(): void {
-    if (+this.game.players == 2) {
-      this. isGameNew = true;
-      this.isGameStarted = true;
-    }
-  }
 
- 
+  ngOnInit(): void {
+
+  }
 
   ngOnChanges(): void {
     if (this.card) {
@@ -46,7 +42,7 @@ export class GameInfoComponent implements OnInit, OnChanges{
       let cardNumber = +this.card.split('_')[1];
       this.title = this.cardActive[cardNumber - 1].title;
       this.description = this.cardActive[cardNumber - 1].description;
+  
     }
-   
   }
 }

@@ -15,4 +15,8 @@
         <mat-card-content>{{ card ? description : 'Click the button new Game'}}</mat-card-content>
     </ng-container>
 
+    <mat-card-actions *ngIf="this.isGameFinished">
+        <button mat-button>Restart</button>
+    </mat-card-actions>
+
 </mat-card>
